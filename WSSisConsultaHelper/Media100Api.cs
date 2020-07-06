@@ -17,7 +17,7 @@ namespace WSSisConsultaHelper {
             var consumer = new ApiConsumerHelper("https://api.sisconsulta.com");
             var result = consumer.Get<Pessoa>(stringSearch);
 
-            if (result.result.NewDataSet == null || result.result.NewDataSet.ConsumoPF == null) {
+            if ((result.result == null || result.result.NewDataSet == null || result.result.NewDataSet.ConsumoPF == null)) {
                 consumer = new ApiConsumerHelper("https://api2.sisconsulta.com");
                 result = consumer.Get<Pessoa>(stringSearch);
             }
