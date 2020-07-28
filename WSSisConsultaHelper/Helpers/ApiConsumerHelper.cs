@@ -17,7 +17,7 @@ namespace WSSisConsultaHelper.Helpers {
             };
             var mediaType = new MediaTypeWithQualityHeaderValue("application/xml");
             _client.DefaultRequestHeaders.Accept.Add(mediaType);
-            _client.Timeout = TimeSpan.FromMinutes(2);
+            _client.Timeout = TimeSpan.FromMinutes(3);
         }
 
         public (T result, string statusCode, string message) Get<T>(string endPoint) {
